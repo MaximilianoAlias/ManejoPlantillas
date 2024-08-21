@@ -1,15 +1,18 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/xhtml">
 <head>
-    <meta charset="UTF-8">
     <title>Agregar - Modificar Persona</title>
 </head>
 <body>
-<h1>Datos de la Persona</h1>
+<header th:replace="plantillas/plantilla.html :: header"></header>
+
+<h2>Agregar o Modificar Persona</h2>
+
+
 <!--Creamos una etoqueta a la que le agregaremos la ruta en el href del menu de inicio para poder
  regresar a la pantalla principal, usamos esa sintaxis por el thymeleaf
  -->
-<a th:href="@{/}">Volver al inicio</a> <br>
+<a th:href="@{/}">Volver al inicio</a> <br><br>
 <!--Al crear el formulario debemos asociarlo a un objeto de tipo persona para que pueda
  realizar los cambios en dicho objeto, para ello usaremos de thymeleaf el comando
  th:object="$persona" en donde especificamos la variable que estamos compartiendo que en
@@ -42,5 +45,9 @@
     <br>
     <input type="submit" name="guardar" value="Guardar"/>
 </form>
+
+<br><br>
+<footer th:replace="plantillas/plantilla.html :: footer"></footer>
+
 </body>
 </html>

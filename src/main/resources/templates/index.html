@@ -1,11 +1,16 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <body>
+<head>
+    <title>Plantillas con Thymeleaf</title>
+</head>
+<header th:replace="plantillas/plantilla.html :: header"></header>
+
 <h1>Spring Data</h1><br>
 <!-- Vamos a crear el crud en el html para eso debemos crear una etiqueta de tipo anchor
  en donde nuestro href va a tener la nueva ruta de la pagina a la cual nos dirigiremos
  para ello usaremos la siguiente sintaxis -->
-<a th:href="@{/agregar}">Agregar Persona</a>
+<a th:href="@{/agregar}">Agregar Persona</a> <br>
 <div th:if="${listaPersonas != null and !listaPersonas.isEmpty()}">
     <table border="1">
         <tr bgcolor="#7fffd4red">
@@ -36,10 +41,10 @@
 </div>
 
 
+<footer th:replace="plantillas/plantilla.html :: footer"></footer>
+
+
 
 </body>
-<head>
-    <meta charset="UTF-8">
-    <title>Inicio - Capa de Servicio</title>
-</head>
+
 </html>
